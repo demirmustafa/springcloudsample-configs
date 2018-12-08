@@ -1,0 +1,25 @@
+server:
+  port: ${EUREKA_PORT:8761}
+
+spring:
+  application:
+    name: service-discovery
+
+management:
+  server:
+    port: 8751
+    servlet:
+      context-path: /management
+
+eureka:
+  instance:
+    hostname: ${EUREKA_HOST:localhost}
+    preferIpAddress: true
+  client:
+    registryFetchIntervalSeconds: 5
+    registerWithEureka: false
+    fetchRegistry: false
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOST:localhost}:${server.port}/eureka/

@@ -1,0 +1,18 @@
+server:
+  port: ${PRODUCT_SERVICE_PORT:8095}
+  servlet:
+    context-path: /product-service
+spring:
+  application:
+    name: product-service
+  jpa:
+      hibernate:
+        ddl-auto: update
+      database: mysql
+      database-platform: org.hibernate.dialect.MySQL5Dialect
+      show-sql: ${SHOW_SQL:false}
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_cloud_sample?characterEncoding=UTF-8
+    username: root
+    password: lambofgod
+    driver-class-name: com.mysql.jdbc.Driver

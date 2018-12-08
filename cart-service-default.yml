@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: cart-service
+  jpa:
+      hibernate:
+        ddl-auto: update
+      database: mysql
+      database-platform: org.hibernate.dialect.MySQL5Dialect
+      show-sql: ${SHOW_SQL:false}
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_cloud_sample?characterEncoding=UTF-8
+    username: root
+    password: lambofgod
+    driver-class-name: com.mysql.jdbc.Driver
+
+server:
+  port: ${CART_SERVICE_PORT:8091}
+  servlet:
+    context-path: /cart-service
+      
+discount-service:
+  apiUrl: http://discount-service/discount-service
+product-service:
+  apiUrl: http://product-service/product-service
