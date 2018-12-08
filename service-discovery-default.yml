@@ -8,8 +8,6 @@ spring:
 management:
   server:
     port: 8751
-    servlet:
-      context-path: /management
 
 eureka:
   instance:
