@@ -5,10 +5,6 @@ spring:
   application:
     name: service-discovery
 
-management:
-  server:
-    port: 8751
-
 eureka:
   instance:
     hostname: ${EUREKA_HOST:localhost}
